@@ -1,5 +1,6 @@
 package com.example.project;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,7 +35,10 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         adapter = new RecyclerViewAdapter(this, recyclerList, new RecyclerViewAdapter.OnClickListener() {
             @Override
-            public void onClick(RecyclerItem recyclerItem) {}
+            public void onClick(RecyclerItem recyclerItem) {
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                startActivity(intent);
+            }
         });
         RecyclerView view = findViewById(R.id.recycler_view);
         view.setAdapter(adapter);
