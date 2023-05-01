@@ -18,22 +18,22 @@ Inkludera även lite skärmdumpar/video från appen, i fall det strular med demo
   - Den extra informationen skall även den komma från webbtjänsten. Det vill säga ni skall använda fler av attributen hos er JSON-data i detaljvyn.
 
 # G
-- [] Presentera en tydligt definierad målgrupp för appen beskriven på en "about"-skärm. About-skärmen skall vara en egen aktivitet.  
-- [] JSON-data till appen skall komma från kursens webbtjänst.  
-- [] Minst ett attribut från appens JSON-data skall presenteras i en RecyclerView.  
-- [] Det måste finns flera meningsfulla commits med programkod som är skapade under flera dagar. Commit-meddelanden skall vara informativa och ge en läsare av commit-loggen en bra överblick av vad som har gjorts i en specifik commit.  
-- [] Inlämningen ska vara gjord före utsatt deadline.  
-- [] Presentera er app och aktivt deltaga i kursens slutseminarie.  
+- [ ] Presentera en tydligt definierad målgrupp för appen beskriven på en "about"-skärm. About-skärmen skall vara en egen aktivitet.  
+- [x] JSON-data till appen skall komma från kursens webbtjänst.  
+- [x] Minst ett attribut från appens JSON-data skall presenteras i en RecyclerView.  
+- [ ] Det måste finns flera meningsfulla commits med programkod som är skapade under flera dagar. Commit-meddelanden skall vara informativa och ge en läsare av commit-loggen en bra överblick av vad som har gjorts i en specifik commit.  
+- [ ] Inlämningen ska vara gjord före utsatt deadline.  
+- [ ] Presentera er app och aktivt deltaga i kursens slutseminarie.  
 
 
 # VG
 
-- [] Varje element i recyclerView skall presentera flera attribut från JSON-datan.  
-- [] Varje element i recyclerView skall ha fler än 1 view.  
-- [] Det skall gå att använda ett filter som avgör vilken data som hämtas. T ex "senaste veckan", "alla tjejer", eller liknande, sagda filter skall inte "nollställas" vid omstart.  
-- [] Det skall finnas en detaljvy som nås via klick i huvudaktiviteten.  
-- [] Detaljvyn skall presentera extra info (fler fält ur JSON-datan) kring det objekt man klickat på.  
-- [] Detaljvyns data skall vara hämtat från webbtjänsten och skickas via Intent från huvudaktiviteten.  
+- [ ] Varje element i recyclerView skall presentera flera attribut från JSON-datan.  
+- [ ] Varje element i recyclerView skall ha fler än 1 view.  
+- [ ] Det skall gå att använda ett filter som avgör vilken data som hämtas. T ex "senaste veckan", "alla tjejer", eller liknande, sagda filter skall inte "nollställas" vid omstart.  
+- [x] Det skall finnas en detaljvy som nås via klick i huvudaktiviteten.  
+- [ ] Detaljvyn skall presentera extra info (fler fält ur JSON-datan) kring det objekt man klickat på.  
+- [ ] Detaljvyns data skall vara hämtat från webbtjänsten och skickas via Intent från huvudaktiviteten.  
 
 # Notes
 - error: cannot find symbol getBindingAdapterPosition(), replaced with getAdapterPosition()
