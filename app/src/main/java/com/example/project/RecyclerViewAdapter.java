@@ -30,7 +30,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
-        holder.text.setText(recyclerList.get(position).getName());
+        holder.name.setText(recyclerList.get(position).getName());
+        holder.paradigm.setText(recyclerList.get(position).getParadigm());
     }
 
     @Override
@@ -39,12 +40,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView text;
+        TextView name;
+        TextView paradigm;
 
         public ViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            text = itemView.findViewById(R.id.item_name);
+            name = itemView.findViewById(R.id.item_name);
+            paradigm = itemView.findViewById(R.id.item_paradigm);
         }
 
         @Override
