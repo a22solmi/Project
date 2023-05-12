@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutActivity">
+    tools:context=".AboutActivity"
+    android:background="@color/PrimaryBright">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="placeholder">
+        android:text="placeholder"
+        android:textColor="@color/TextBody"
+        android:textSize="18sp">
 
     </TextView>
 

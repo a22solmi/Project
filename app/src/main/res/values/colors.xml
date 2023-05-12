@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="PrimaryBright">#f8faf0</color>
-    <color name="Primary">#f3f5eb</color>
-    <color name="PrimaryDark">#eceee4</color>
-    <color name="Tag">#d9e7cb</color>
-    <color name="TextBody">#312e33</color>
+    <color name="PrimaryBright">#25232a</color>
+    <color name="Primary">#1D1C21</color>
+    <color name="PrimaryDark">#121115</color>
+    <color name="ItemBackground">#3c3a40</color>
+    <color name="Tag">#248046</color>
+    <color name="TextBody">#e5e1e4</color>
 </resources>
