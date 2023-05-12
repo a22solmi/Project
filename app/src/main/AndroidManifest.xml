@@ -19,6 +19,9 @@
             android:name=".DetailActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".FilterActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
