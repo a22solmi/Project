@@ -1,8 +1,5 @@
 package com.example.project;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.google.gson.annotations.SerializedName;
 
 public class RecyclerItem {
@@ -22,7 +19,7 @@ public class RecyclerItem {
 
     public String getName() { return name; }
 
-    public String getParadigm() { return paradigm; }
+    public String[] getParadigm() { return paradigm.split("\\s+"); }
     public String getUse() { return use; }
     public String getExample() { return example; }
     public int getCollector() { return collector; }
