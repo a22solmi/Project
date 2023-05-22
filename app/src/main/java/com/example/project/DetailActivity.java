@@ -19,8 +19,7 @@ public class DetailActivity extends AppCompatActivity {
 
         ImageView imageView = findViewById(R.id.detail_image);
         Picasso.get()
-                .load("file:///android_asset/" + getIntent().getStringExtra("img"))
-                .resize(300, 300)
+                .load("file:///android_asset/" + getIntent().getStringExtra("aux"))
                 .into(imageView);
 
         TextView detailParadigm = findViewById(R.id.detail_paradigm);
@@ -40,6 +39,6 @@ public class DetailActivity extends AppCompatActivity {
         detailUse.setText(getIntent().getStringExtra("use"));
 
         TextView detailExample = findViewById(R.id.detail_example);
-        detailExample.setText(getIntent().getStringExtra("example"));
+        detailExample.setText(getIntent().getStringExtra("example") + "\n");
     }
 }
