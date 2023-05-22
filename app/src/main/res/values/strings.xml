@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Project</string>
+    <string name="about">Målgruppen för denna app är alla som har ett intresse för programmering.
+    \nNybörjare får en översikt av olika typer av språk som de kan stöta på under sina studier.
+    Erfarna programmerare kan leta upp nya eller mindre kända språk.
+    \nDet finns exempelkod för att få en känsla för språkets syntax samt en beskrivning av vanliga användningsområden.
+    Eftersom det går att filtrera resultat baserat paradigm kan varje användare enkelt hitta språk för det som intresserar just dem.
+    </string>
 </resources>
