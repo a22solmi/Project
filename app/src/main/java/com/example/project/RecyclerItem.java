@@ -9,20 +9,19 @@ public class RecyclerItem {
 
     @SerializedName("location")
     private String paradigm;
-    @SerializedName("category")
-    private String example;
-    @SerializedName("size")
-    private int collector;
-
     @SerializedName("auxdata")
-    private AuxData aux;
+    private String example;
+
+    @SerializedName("category")
+    private String aux;
 
     public String getName() { return name; }
 
     public String[] getParadigm() { return paradigm.split("\\s+"); }
     public String getUse() { return use; }
-    public String getExample() { return example; }
-    public int getCollector() { return collector; }
-    public String getImg() { return aux.getImg(); }
+    public String getExample() {
+        return example.replace("\\n", System.getProperty("line.separator"));
+    }
+    public String getAux() { return aux; }
 
 }

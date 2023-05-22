@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         setSupportActionBar(toolbar);
         sharedPreferences = getApplicationContext().getSharedPreferences("pref", Context.MODE_PRIVATE);
         String json_url = "https://mobprog.webug.se/json-api?login=a22solmi";
-        String json_file = "content.json";
-        //new JsonTask(this).execute(json_url);
-        new JsonFile(this, this).execute(json_file);
+        //String json_file = "content.json";
+        new JsonTask(this).execute(json_url);
+        //new JsonFile(this, this).execute(json_file);
     }
     @Override
     public void onPostExecute(String json) {
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
                 intent.putExtra("paradigm", recyclerItem.getParadigm());
                 intent.putExtra("use", recyclerItem.getUse());
                 intent.putExtra("example", recyclerItem.getExample());
-                intent.putExtra("img", recyclerItem.getImg());
+                intent.putExtra("aux", recyclerItem.getAux());
                 startActivity(intent);
             }
         });
