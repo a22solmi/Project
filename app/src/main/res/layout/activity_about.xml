@@ -9,9 +9,11 @@
 
     <ImageView
         android:id="@+id/detail_image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/text_about"
+        android:layout_alignStart="@+id/text_about"
+        android:layout_alignEnd="@+id/text_about"
         android:background="@drawable/image_background"
         android:padding="20dp"/>
 
@@ -22,7 +24,8 @@
         android:text="@string/about"
         android:textColor="@color/TextBody"
         android:textSize="18sp"
-        android:paddingTop="620px"
-        android:layout_margin="20dp">
+        android:paddingTop="640px"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
     </TextView>
 </RelativeLayout>
