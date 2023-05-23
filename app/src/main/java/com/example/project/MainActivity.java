@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     private ArrayList<RecyclerItem> recyclerList;
     private RecyclerViewAdapter adapter;
     private SharedPreferences sharedPreferences;
+    private RecyclerView view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,14 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         sharedPreferences = getApplicationContext().getSharedPreferences("pref", Context.MODE_PRIVATE);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        view = findViewById(R.id.recycler_view);
+        view.setAdapter(adapter);
+        view.setLayoutManager(layoutManager);
+
+
         String json_url = "https://mobprog.webug.se/json-api?login=a22solmi";
         new JsonTask(this).execute(json_url);
     }
@@ -51,8 +61,8 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
                 startActivity(intent);
             }
         });
-        RecyclerView view = findViewById(R.id.recycler_view);
         view.setAdapter(adapter);
+
         Set<String> set = sharedPreferences.getStringSet("perf",  Collections.emptySet());
         adapter.filter(set.toArray(new String[3]));
     }
