@@ -22,10 +22,7 @@ import java.util.List;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
-    private ArrayList<RecyclerItem> recyclerList;
-    private RecyclerViewAdapter adapter;
     private SharedPreferences sharedPreferences;
-    private RecyclerView view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,14 +30,6 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         sharedPreferences = getApplicationContext().getSharedPreferences("pref", Context.MODE_PRIVATE);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        view = findViewById(R.id.recycler_view);
-        view.setAdapter(adapter);
-        view.setLayoutManager(layoutManager);
-
-
         String json_url = "https://mobprog.webug.se/json-api?login=a22solmi";
         new JsonTask(this).execute(json_url);
     }
@@ -48,8 +37,8 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     public void onPostExecute(String json) {
         Gson gson = new Gson();
         Type type = new TypeToken<List<RecyclerItem>>() {}.getType();
-        recyclerList = gson.fromJson(json, type);
-        adapter = new RecyclerViewAdapter(this, recyclerList, new RecyclerViewAdapter.OnClickListener() {
+        ArrayList<RecyclerItem> recyclerList = gson.fromJson(json, type);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, recyclerList, new RecyclerViewAdapter.OnClickListener() {
             @Override
             public void onClick(RecyclerItem recyclerItem) {
                 Intent intent = new Intent(MainActivity.this, DetailActivity.class);
@@ -61,8 +50,9 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
                 startActivity(intent);
             }
         });
+        RecyclerView view = findViewById(R.id.recycler_view);
+        view.setLayoutManager(new LinearLayoutManager(this));
         view.setAdapter(adapter);
-
         Set<String> set = sharedPreferences.getStringSet("perf",  Collections.emptySet());
         adapter.filter(set.toArray(new String[3]));
     }
